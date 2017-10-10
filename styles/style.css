@@ -52,3 +52,11 @@ img {
   height: auto;
   width: 30%;
 }
+
+#menu {
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  margin-left: -104.5px; /*104.5px is half of the button's width*/
+}

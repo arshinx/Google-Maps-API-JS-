@@ -24,6 +24,7 @@ function initMap() {
 
   // InfoWindow and bounds
   var largeInfowindow = new google.maps.InfoWindow();
+  var bounds = new google.maps.LatLngBounds();
 
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {

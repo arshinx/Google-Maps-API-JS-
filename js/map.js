@@ -91,4 +91,12 @@ function initMap() {
     }
   } // Ends function
 
+  // This function will hide the menu.
+  function hideMenu() {
+    console.log('hide menu - 1')
+    document.getElementById('options-box').style.display = "none";
+    document.getElementById('map').left = "0px";
+    console.log('hide menu - 2');
+  } // Ends function
+
 }

@@ -81,4 +81,11 @@ function initMap() {
     map.fitBounds(bounds);
   } // Ends function
 
+  // This function will loop through the listings and hide them all.
+  function hideListings() {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(null);
+    }
+  } // Ends function
+
 }

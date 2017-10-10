@@ -6,4 +6,12 @@ function initMap() {
     center: {lat: 40.7413549, lng: -73.9980244},
     zoom: 13 // up to level 21 of zooming
   });
+
+  // Marker: Tribeca
+  var tribeca = {lat: 40.719526, lng: -74.0089934};
+  var marker = new google.maps.Marker({
+    position: tribeca,
+    map: map,
+    title: 'First Marker!'
+  });
 }

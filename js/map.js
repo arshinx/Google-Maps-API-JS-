@@ -25,19 +25,12 @@ function initMap() {
   // InfoWindow and bounds
   var largeInfowindow = new google.maps.InfoWindow();
 
-  // Marker: Tribeca
-  var tribeca = {lat: 40.719526, lng: -74.0089934};
-  var marker = new google.maps.Marker({
-    position: tribeca,
-    map: map,
-    title: 'First Marker!'
-  });
+  // The following group uses the location array to create an array of markers on initialize.
+  for (var i = 0; i < locations.length; i++) {
+    // Get the position from the location array.
+    var position = locations[i].location;
+    var title = locations[i].title;
+    
+  }
 
-  // InfoWindow: Greeting!
-  var infoWindow = new google.maps.InfoWindow({
-    content: 'Hello'
-  });
-  marker.addListener('click', function(){
-    infoWindow.open(map, marker);
-  });
 }

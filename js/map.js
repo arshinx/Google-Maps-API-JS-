@@ -47,6 +47,7 @@ function initMap() {
       populateInfoWindow(this, largeInfowindow);
     });
 
+    bounds.extend(markers[i].position);
   }
 
 }

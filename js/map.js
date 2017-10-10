@@ -22,9 +22,8 @@ function initMap() {
     {title: 'Chinatown Homey Space', location: {lat: 40.7180628, lng: -73.9961237}}
   ];
 
-  // InfoWindow and bounds
+  // InfoWindow
   var largeInfowindow = new google.maps.InfoWindow();
-  var bounds = new google.maps.LatLngBounds();
 
   // Marker: Tribeca
   var tribeca = {lat: 40.719526, lng: -74.0089934};

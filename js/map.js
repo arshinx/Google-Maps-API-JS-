@@ -16,8 +16,8 @@ function initMap() {
   });
 
   // InfoWindow: Greeting!
-  var infoWindow = new google.maps.infoWindow({
-    content: "Hello"
+  var infoWindow = new google.maps.InfoWindow({
+    content: 'Hello'
   });
   marker.addListener('click', function(){
     infoWindow.open(map, marker);

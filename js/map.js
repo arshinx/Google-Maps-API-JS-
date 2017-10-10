@@ -47,7 +47,6 @@ function initMap() {
       populateInfoWindow(this, largeInfowindow);
     });
 
-    bounds.extend(markers[i].position);
     document.getElementById('show-listings').addEventListener('click', showListings);
     document.getElementById('hide-listings').addEventListener('click', hideListings);
   }

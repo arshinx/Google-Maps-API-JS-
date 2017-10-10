@@ -14,4 +14,12 @@ function initMap() {
     map: map,
     title: 'First Marker!'
   });
+
+  // InfoWindow: Greeting!
+  var infoWindow = new google.maps.infoWindow({
+    content: "Hello"
+  });
+  marker.addListener('click', function(){
+    infoWindow.open(map, marker);
+  });
 }

@@ -189,6 +189,10 @@ function initMap() {
       // New Street View Object
       var streetViewService = new google.maps.StreetViewService();
       var radius = 50;
+
+      // Use streetview service to get the closest streetview image within
+      // 50 meters of the markers position
+      streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
     }
   } // Ends function
 

@@ -188,6 +188,7 @@ function initMap() {
 
       // New Street View Object
       var streetViewService = new google.maps.StreetViewService();
+      var radius = 50;
     }
   } // Ends function
 

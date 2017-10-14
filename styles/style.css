@@ -58,5 +58,6 @@ img {
   position: absolute;
   top: 10px;
   left: 12%;
+  opacity: 0.5;
   margin-left: -104.5px; /*104.5px is half of the button's width*/
 }

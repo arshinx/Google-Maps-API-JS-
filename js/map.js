@@ -81,7 +81,7 @@ function initMap() {
     center: {lat: 40.7413549, lng: -73.9980244},
     zoom: 13, // up to level 21 of zooming
     styles: styles,
-    mapTypeControl: false // Allows changing map type to roads, etc. 
+    mapTypeControl: false // Allows changing map type to roads, etc.
   });
 
   // These are the real estate listings that will be shown to the user.
@@ -97,6 +97,9 @@ function initMap() {
 
   // InfoWindow and bounds
   var largeInfowindow = new google.maps.InfoWindow();
+
+  // Default Icon
+  var defaultIcon = makeMarkerIcon('0091ff');
 
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {

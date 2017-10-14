@@ -265,6 +265,19 @@ function initMap() {
     return markerImage;
   }
 
+  // This shows and hides (respectively) the drawing options.
+  function toggleDrawing(drawingManager) {
+    if (drawingManager.map) {
+      drawingManager.setMap(null);
+      // In case the user drew anything, get rid of the polygon
+      if (polygon !== null) {
+        polygon.setMap(null);
+      }
+    } else {
+      drawingManager.setMap(map);
+    }
+  }
+
   // This function will hide the menu.
   function hideMenu() {
     if (isMenuHidden === false) {

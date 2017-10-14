@@ -1,6 +1,7 @@
 
 // *** Map ***
 var map;
+var isMenuHidden = false;
 
 // Create a new blank array for all the listing markers.
 var markers = [];

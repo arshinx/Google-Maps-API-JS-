@@ -187,6 +187,10 @@ function initMap() {
         infowindow.setMarker = null;
       });
 
+      // New Street View Object
+      var streetViewService = new google.maps.StreetViewService();
+      var radius = 50;
+
       // In case the status is OK, which means the pano was found, compute the
       // position of the streetview image, then calculate the heading, then get a
       // panorama from that and set the options
@@ -211,10 +215,6 @@ function initMap() {
             '<div>No Street View Found</div>');
         }
       }
-
-      // New Street View Object
-      var streetViewService = new google.maps.StreetViewService();
-      var radius = 50;
 
       // Use streetview service to get the closest streetview image within
       // 50 meters of the markers position

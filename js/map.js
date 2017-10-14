@@ -94,10 +94,15 @@ function initMap() {
 
   // This function will hide the menu.
   function hideMenu() {
-    console.log('hide menu - 1')
-    document.getElementById('options-box').style.display = "none";
-    document.getElementById('map').left = "0px";
-    console.log('hide menu - 2');
+    if (isMenuHidden === false) {
+      document.getElementById('options-box').style.display = "none";
+      document.getElementById('map').left = "0px";
+      isMenuHidden = false;
+    } else {
+      document.getElementById('options-box').style.display = "";
+      document.getElementById('map').left = "362px";
+      isMenuHidden = true;
+    }
   } // Ends function
 
 }

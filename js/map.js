@@ -101,6 +101,9 @@ function initMap() {
   // Default Icon
   var defaultIcon = makeMarkerIcon('0091ff');
 
+  // Highlighted Icon for hover
+  var highlightedIcon = makeMarkerIcon('FFFF24');
+
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {
     // Get the position from the location array.

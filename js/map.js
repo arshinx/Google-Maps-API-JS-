@@ -185,6 +185,9 @@ function initMap() {
       infowindow.addListener('closeclick',function(){
         infowindow.setMarker = null;
       });
+
+      // New Street View Object
+      var streetViewService = new google.maps.StreetViewService();
     }
   } // Ends function
 

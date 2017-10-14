@@ -131,6 +131,11 @@ function initMap() {
       this.setIcon(highlightedIcon);
     });
 
+    // Change Icon when Hover Ends
+    marker.addListener('mouseout', function() {
+      this.setIcon(defaultIcon);
+    });
+
     document.getElementById('show-listings').addEventListener('click', showListings);
     document.getElementById('hide-listings').addEventListener('click', hideListings);
     // *** Menu Button ***

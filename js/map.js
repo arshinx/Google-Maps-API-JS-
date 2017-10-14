@@ -221,14 +221,6 @@ function initMap() {
     }
   }
 
-      // Use streetview service to get the closest streetview image within
-      // 50 meters of the markers position
-      streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
-      // Open the infowindow on the correct marker.
-      infowindow.open(map, marker);
-    }
-  } // Ends function
-
   // This function will loop through the markers array and display them all.
   function showListings() {
     var bounds = new google.maps.LatLngBounds();

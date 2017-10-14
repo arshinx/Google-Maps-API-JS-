@@ -181,7 +181,7 @@ function initMap() {
       // Clear the infowindow content to give the streetview time to load.
       infowindow.setContent('');
       infowindow.marker = marker;
-      infowindow.open(map, marker);
+      var infoContent = '<img src="https://www.city-journal.org/sites/cj/files/New-York.jpg" alt="' + marker.title + '"></img>' + '<div>' + marker.title + ' (' + marker.position.lat + ', ' + marker.position.lng + ')' + '</div>';
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick',function(){
         infowindow.setMarker = null;
@@ -204,7 +204,8 @@ function initMap() {
               }
             };
           var panorama = new google.maps.StreetViewPanorama(
-            document.getElementById('pano'), panoramaOptions);
+            document.getElementById('pano'), panoramaOptions
+          );
         } else {
           infowindow.setContent('<div>' + marker.title + '</div>' +
             '<div>No Street View Found</div>');

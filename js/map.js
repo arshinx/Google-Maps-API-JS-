@@ -172,6 +172,9 @@ function initMap() {
   // *** Helpers *** //
   // *************** //
 
+  var infoContent = '<img src="https://www.city-journal.org/sites/cj/files/New-York.jpg" alt="' + marker.title + '"></img>' + '<div>' + marker.title + ' (' + marker.position.lat + ', ' + marker.position.lng + ')' + '</div>';
+
+
   // This function populates the infowindow when the marker is clicked. We'll only allow
   // one infowindow which will open at the marker that is clicked, and populate based
   // on that markers position.
@@ -181,7 +184,6 @@ function initMap() {
       // Clear the infowindow content to give the streetview time to load.
       infowindow.setContent('');
       infowindow.marker = marker;
-      var infoContent = '<img src="https://www.city-journal.org/sites/cj/files/New-York.jpg" alt="' + marker.title + '"></img>' + '<div>' + marker.title + ' (' + marker.position.lat + ', ' + marker.position.lng + ')' + '</div>';
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick',function(){
         infowindow.setMarker = null;

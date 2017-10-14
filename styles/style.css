@@ -51,6 +51,10 @@ h1 {
   height: 200px;
 }
 
+.text {
+  font-size: 12px;
+}
+
 /* JS */
 
 img {

@@ -124,6 +124,18 @@ function initMap() {
   // InfoWindow and bounds
   var largeInfowindow = new google.maps.InfoWindow();
 
+  // Initialize the drawing manager.
+  var drawingManager = new google.maps.drawing.DrawingManager({
+    drawingMode: google.maps.drawing.OverlayType.POLYGON,
+    drawingControl: true,
+    drawingControlOptions: {
+      position: google.maps.ControlPosition.TOP_LEFT,
+      drawingModes: [
+        google.maps.drawing.OverlayType.POLYGON
+      ]
+    }
+  });
+
   // Default Icon
   var defaultIcon = makeMarkerIcon('0091ff');
 

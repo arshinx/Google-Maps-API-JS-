@@ -115,6 +115,7 @@ function initMap() {
       map: map,
       position: position,
       title: title,
+      icon: defaultIcon,
       animation: google.maps.Animation.DROP,
       id: i
     });

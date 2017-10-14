@@ -178,8 +178,9 @@ function initMap() {
   function populateInfoWindow(marker, infowindow) {
     // Check to make sure the infowindow is not already opened on this marker.
     if (infowindow.marker != marker) {
+      // Clear the infowindow content to give the streetview time to load.
+      infowindow.setContent('');
       infowindow.marker = marker;
-      infowindow.setContent('<img src="https://www.city-journal.org/sites/cj/files/New-York.jpg" alt="' + marker.title + '"></img>' + '<div>' + marker.title + ' (' + marker.position.lat + ', ' + marker.position.lng + ')' + '</div>');
       infowindow.open(map, marker);
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick',function(){

@@ -126,6 +126,11 @@ function initMap() {
       populateInfoWindow(this, largeInfowindow);
     });
 
+    // Change Icon when Hover Begins
+    marker.addListener('mouseover', function() {
+      this.setIcon(highlightedIcon);
+    });
+
     document.getElementById('show-listings').addEventListener('click', showListings);
     document.getElementById('hide-listings').addEventListener('click', hideListings);
     // *** Menu Button ***

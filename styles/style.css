@@ -72,3 +72,10 @@ img {
 }
 
 /* Nav */
+nav {
+  height: 80%;
+}
+
+ul button {
+  display: block;
+}

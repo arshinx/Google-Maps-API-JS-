@@ -8,10 +8,14 @@ function viewModel() {
     self.state          = ko.observable();
 
     // Functions
+
+    // -- Waterfalls list -- //
     locations.forEach(function(value, key){
-      // Populate list 
+      // Populate list
       self.waterfallsList.push(locations[key]);
     });
+
+    // -- Filter List of Waterfalls -- //
 
 };
 

@@ -164,7 +164,7 @@ function initMap() {
     } else {
       //container.css('left', '-25%');
       map_element.css('left', '0');
-      menu.css('left', '0');
+      menu.css('left', '12%');
       map_element.css('width', '100%');
       //options_box.css('display', 'auto');
     };

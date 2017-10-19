@@ -1,46 +1,50 @@
 // View Model using Knockout
 function viewModel() {
-    var self = this;
+  var self = this;
 
-    // Properties
-    self.waterfallsList = ko.observableArray();
-    self.selection      = ko.observable();
-    self.state          = ko.observable();
+  // Properties
+  self.waterfallsList = ko.observableArray();
+  self.selection      = ko.observable();
+  self.state          = ko.observable();
 
-    // Functions
+  // Functions
 
-    // -- Waterfalls list -- //
+  // -- Waterfalls list -- //
+  locations.forEach(function(value, key){
+    // Populate list
+    self.waterfallsList.push(locations[key]);
+  });
+
+  // -- Filter List of Waterfalls -- //
+  self.filter = function() {
+
+    // Reset list and markers — display
+    self.waterfallsList.removeAll();
     locations.forEach(function(value, key){
       // Populate list
       self.waterfallsList.push(locations[key]);
+      markers[key].setVisible(true);
     });
 
-    // -- Filter List of Waterfalls -- //
-    self.filter = function() {
-
-      // Reset list and markers — display
-      self.waterfallsList.removeAll();
-      locations.forEach(function(value, key){
-        // Populate list
-        self.waterfallsList.push(locations[key]);
-        markers[key].setVisible(true);
-      });
-
-      // Filter listings/markers — hide
-      locations.forEach(function(value, key){
-        // Validate whether all elements are selected
-        if (self.state() !== 'Select All') {
-          if (value.state !== self.state()) {
-            // Update list
-            self.waterfallsList.remove(value);
-            markers[key].setVisible(false);
-          }
+    // Filter listings/markers — hide
+    locations.forEach(function(value, key){
+      // Validate whether all elements are selected
+      if (self.state() !== 'Select All') {
+        if (value.state !== self.state()) {
+          // Update list
+          self.waterfallsList.remove(value);
+          markers[key].setVisible(false);
         }
-      });
-    } // Ends Function
-
-  }
-
+      }
+    });
+  } // Ends Function
 };
 
 ko.applyBindings(new viewModel());
+
+// Google Error Handler
+var googleError = function() {
+    alert("Failed to load GoogleMaps API");
+    $('#map').append('<br>' + "Failed to load GoogleMaps API");
+    $('#map').css({'font-size': '3em', 'color': '#f21'})
+}

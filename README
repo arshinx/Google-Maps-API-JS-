@@ -3,9 +3,6 @@
 - open "index.html" file using a browser
 
 ## TODO:
-- Update Data with Waterfalls
-- Style Menu to display as a list
-- Layout Configuration for Mobile View
 - Update HTML Structure
 - Modify Knockout Structure
 

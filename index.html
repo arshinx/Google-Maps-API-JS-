@@ -9,9 +9,9 @@
     <div class="container">
       <nav class="nav">
   			<div class="dropDown">Filter by Region:
-  				<select id="stateList" data-bind="options: regions, value: selectedState, event: {change: filterSchools}"></select>
+  				<select id="stateList" data-bind="options: regions, value: state, event: {change: filter}"></select>
   			</div>
-  			<ul id="schoolList" data-bind="foreach: schoolOptions">
+  			<ul id="schoolList" data-bind="foreach: waterfallsList">
   				<button data-bind="click: $parent.highlight">
   					<span data-bind="text: title"></span>
   				</button>

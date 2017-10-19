@@ -1,3 +1,14 @@
 ## Google Maps API using JS
 
 - open "index.html" file using a browser
+
+## TODO:
+- Update Data with Waterfalls
+- Style Menu to display as a list
+- Layout Configuration for Mobile View
+- Update HTML Structure
+- Modify Knockout Structure
+
+// ---- Submit Version 1 ---- //
+
+- Contemplate on using another API

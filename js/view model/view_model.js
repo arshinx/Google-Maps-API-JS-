@@ -4,6 +4,7 @@ function viewModel() {
 
     // Properties
     self.waterfallsList = ko.observableArray();
+    self.selection      = ko.observable();
 
 };
 

@@ -150,15 +150,17 @@ function initMap() {
 
   // This function will hide the menu.
   function hideMenu() {
-    if (isMenuHidden === false) {
-      document.getElementById('options-box').style.display = "none";
-      document.getElementById('map').left = "0px";
-      isMenuHidden = false;
+
+    var options_box = $('.options-box');
+    var container = $('.container');
+
+    if (container.css('left') < '0') {
+      container.css('left', '0');
+      //options_box.css('display', 'none');
     } else {
-      document.getElementById('options-box').style.display = "";
-      document.getElementById('map').left = "362px";
-      isMenuHidden = true;
-    }
+      container.css('left', '-25%');
+      //options_box.css('display', 'auto');
+    };
   } // Ends function
 
 }

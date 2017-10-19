@@ -1,4 +1,3 @@
-
 // *** Map ***
 var map;
 var isMenuHidden = false;

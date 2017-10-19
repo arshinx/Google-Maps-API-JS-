@@ -97,6 +97,7 @@ function initMap() {
           var nearStreetViewLocation = data.location.latLng;
           var heading = google.maps.geometry.spherical.computeHeading(
             nearStreetViewLocation, marker.position);
+            var wikiInfo = '<div><strong>' + search + '</strong><br><br><img src="img/' + search + '.jpg" alt="' + search + '" width="150px"><br><br>Learn more about:<br><a target="_blank" href="' + wikiLink + '">' + wikiTitle + '!</a></div>';
             infowindow.setContent('<div>' + marker.title + '</div><div id="pano"></div>');
             var panoramaOptions = {
               position: nearStreetViewLocation,

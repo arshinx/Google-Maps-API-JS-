@@ -28,6 +28,7 @@ h1 {
 }
 
 #map {
+  top: 185px;
   bottom:0px;
   height: 100%;
   left: 362px;
@@ -79,8 +80,4 @@ ul button {
 
 #schoolList {
   margin: 10px;
-}
-
-header {
-  margin-bottom: 20px;
 }

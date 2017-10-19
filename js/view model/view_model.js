@@ -3,7 +3,8 @@ function viewModel() {
     var self = this;
 
     // Properties
-    self.locationsList = ko.observableArray();
+    self.waterfallsList = ko.observableArray();
+
 };
 
 ko.applyBindings(new viewModel());

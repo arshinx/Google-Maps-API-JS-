@@ -8,28 +8,42 @@
   <body>
     <!-- Filters: Hide/Show Map -->
     <div class="container">
-      <nav class="nav">
-  			<div class="dropDown">Filter by Region:
-  				<select id="stateList" data-bind="options: regions, value: state, event: {change: filter}"></select>
-  			</div>
-  			<ul id="schoolList" data-bind="foreach: waterfallsList">
-  				<button data-bind="click: $parent.highlight">
-  					<span data-bind="text: title"></span>
-  				</button>
-  			</ul>
-		  </nav>
-      <div id="options-box" class="options-box">
-        <h1>Find Your New NYC Home</h1>
-        <div>
-          <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-listings" type="button" value="Hide Listings">
-        </div>
-      </div>
 
-      <!-- Map + Menu -->
-      <div class="main">
-        <span id="menu" class="menu" data-bind="click: menu">☰</span>
-        <div id="map"></div>
+      <!-- Row -->
+      <div class="row">
+
+        <!-- Column 1, Size: 3 (of 12) -->
+        <div class="col-3">
+          <!-- Nav -->
+          <nav class="nav navbar navbar-light bg-light">
+      			<div class="dropDown navbar-brand">Select Region:
+      				<select id="stateList" data-bind="options: regions, value: state, event: {change: filter}"></select>
+      			</div>
+      			<ul id="schoolList" data-bind="foreach: waterfallsList">
+      				<button data-bind="click: $parent.highlight">
+      					<span data-bind="text: title"></span>
+      				</button>
+      			</ul>
+    		  </nav>
+
+          <!-- Show/Hide Options -->
+          <div id="options-box" class="options-box">
+            <div>
+              <input id="show-listings" type="button" value="Show Waterfalls">
+              <input id="hide-listings" type="button" value="Hide Waterfalls">
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2, Size: 9 (of 12) -->
+        <div class="col-9">
+          <!-- Map + Menu -->
+          <div class="main">
+            <span id="menu" class="menu" data-bind="click: menu">☰</span>
+            <div id="map"></div>
+          </div>
+        </div>
+
       </div>
     </div>
 

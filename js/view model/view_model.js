@@ -7,6 +7,12 @@ function viewModel() {
     self.selection      = ko.observable();
     self.state          = ko.observable();
 
+    // Functions
+    locations.forEach(function(value, key){
+      // Populate list 
+      self.waterfallsList.push(locations[key]);
+    });
+
 };
 
 ko.applyBindings(new viewModel());

@@ -153,12 +153,17 @@ function initMap() {
 
     var options_box = $('.options-box');
     var container = $('.container');
+    var map_element = $('#map');
 
     if (container.css('left') < '0') {
-      container.css('left', '0');
+      map_element.css('left', '+50%');
+      map_element.css('width', '50%');
+      //container.css('left', '0');
       //options_box.css('display', 'none');
     } else {
-      container.css('left', '-25%');
+      //container.css('left', '-25%');
+      map_element.css('left', '0');
+      map_element.css('width', '100%');
       //options_box.css('display', 'auto');
     };
   } // Ends function

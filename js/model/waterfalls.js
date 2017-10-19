@@ -40,7 +40,7 @@ var locations = [
 
 // Regions
 var regions = ko.observableArray([
-  'All',
+  'Select All',
   'American Southwest',
   'Pacific Northwest',
   'Eastern US'

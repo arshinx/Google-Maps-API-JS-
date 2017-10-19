@@ -7,6 +7,16 @@
   <body>
     <!-- Filters: Hide/Show Map -->
     <div class="container">
+      <nav class="nav">
+  			<div class="dropDown">Filter by state:
+  				<select id="stateList" data-bind="options: states, value: selectedState, event: {change: filterSchools}"></select>
+  			</div>
+  			<ul id="schoolList" data-bind="foreach: schoolOptions">
+  				<button data-bind="click: $parent.highlight">
+  					<span data-bind="text: title"></span>
+  				</button>
+  			</ul>
+		  </nav>
       <div id="options-box" class="options-box">
         <h1>Find Your New NYC Home</h1>
         <div>

@@ -26,3 +26,11 @@ var locations = [
     location: {lat: 40.7180628, lng: -73.9961237}
   }
 ];
+
+// Regions
+var regions = ko.observableArray([
+  'All',
+  'American Southwest',
+  'Pacific Northwest',
+  'Eastern US'
+]);

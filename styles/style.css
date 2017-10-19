@@ -81,3 +81,8 @@ ul button {
 #schoolList {
   margin: 10px;
 }
+
+.info-column {
+  background-color:lavender;
+  height: -webkit-fill-available;
+}

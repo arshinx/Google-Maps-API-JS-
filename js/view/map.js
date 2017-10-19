@@ -77,6 +77,9 @@ function initMap() {
     if (infowindow.marker != marker) {
       // Marker
       infowindow.marker = marker;
+      // Wikipedia API
+      var searchTerm = marker.title;
+      var wikiTitle, wikiLink;
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
         infowindow.marker = null;

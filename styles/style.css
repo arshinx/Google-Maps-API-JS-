@@ -76,3 +76,7 @@ ul button {
   display: block;
   margin: 5px;
 }
+
+#schoolList {
+  margin: 10px;
+}

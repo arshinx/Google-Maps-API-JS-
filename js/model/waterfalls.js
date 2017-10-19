@@ -2,38 +2,38 @@
 // Normally we'd have these in a database instead.
 var locations = [
   {
-    title: 'Park Ave Penthouse',
-    location: {lat: 40.7713024, lng: -73.9632393},
+    title: 'Cathedral Lakes Waterfall',
+    location: {lat: 37.84585, lng: -119.43203},
     region: 'American Southwest'
   },
   {
-    title: 'Park Ave Penthouse',
-    location: {lat: 40.7613024, lng: -73.9632393},
+    title: 'Navajo Falls',
+    location: {lat: 36.247042, lng: -112.70256},
     region: 'American Southwest'
   },
   {
-    title: 'Chelsea Loft',
-    location: {lat: 40.7444883, lng: -73.9949465},
+    title: 'Crystal Falls',
+    location: {lat: 44.7177136, lng: -110.5012769},
     region: 'Pacific Northwest'
   },
   {
-    title: 'Union Square Open Floor Plan',
-    location: {lat: 40.7347062, lng: -73.9895759},
+    title: 'Double Falls',
+    location: {lat: 44.891968000000006, lng: -122.644629},
     region: 'Pacific Northwest'
   },
   {
-    title: 'East Village Hip Studio',
-    location: {lat: 40.7281777, lng: -73.984377},
+    title: 'Cane Creek Cascade',
+    location: {lat: 35.662317, lng: -85.35112},
     region: 'Eastern US'
   },
   {
-    title: 'TriBeCa Artsy Bachelor Pad',
-    location: {lat: 40.7195264, lng: -74.0089934},
+    title: 'Dry Falls',
+    location: {lat: 35.068818, lng: -83.2408038},
     region: 'Eastern US'
   },
   {
-    title: 'Chinatown Homey Space',
-    location: {lat: 40.7180628, lng: -73.9961237},
+    title: 'Niagara Falls',
+    location: {lat: 43.077916, lng: -79.1379568},
     region: 'Eastern US'
   }
 ];

@@ -35,9 +35,11 @@ function viewModel() {
             self.waterfallsList.remove(value);
             markers[key].setVisible(false);
           }
-        });
+        }
+      });
+    } // Ends Function
 
-    }
+  }
 
 };
 

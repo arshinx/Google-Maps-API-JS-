@@ -1,5 +1,5 @@
 // View Model using Knockout
-function viewModel() {
+function waterfallMapModel() {
   var self = this;
 
   // Properties
@@ -60,7 +60,7 @@ function viewModel() {
 
 };
 
-ko.applyBindings(new viewModel());
+ko.applyBindings(new waterfallMapModel());
 
 // Google Error Handler
 var googleError = function() {

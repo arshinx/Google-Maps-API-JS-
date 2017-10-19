@@ -80,10 +80,13 @@ function initMap() {
       // Wikipedia API
       var searchTerm = marker.title;
       var wikiTitle, wikiLink;
+
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
         infowindow.marker = null;
       });
+
+      // *** Google Street View Service ***
       var streetViewService = new google.maps.StreetViewService();
       var radius = 50;
       // In case the status is OK, which means the pano was found, compute the

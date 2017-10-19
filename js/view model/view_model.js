@@ -51,6 +51,12 @@ function viewModel() {
       }
     });
   } // Ends Function
+
+  // Menu
+  var menu = function() {
+
+  }; // Ends function
+
 };
 
 ko.applyBindings(new viewModel());

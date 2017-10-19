@@ -38,14 +38,15 @@ function viewModel() {
       self.waterfallsList.push(locations[key]);
       markers[key].setVisible(true);
     });
+    var a;
 
     // Filter listings/markers — hide
     locations.forEach(function(value, key){
       // Validate whether all elements are selected
       if (self.state() !== 'Select All') {
-        if (value.state !== self.state()) {
+        if (value.region !== self.state()) {
           // Update list
-          self.waterfallsList.remove(value);
+          a = self.waterfallsList.remove(value);
           markers[key].setVisible(false);
         }
       }

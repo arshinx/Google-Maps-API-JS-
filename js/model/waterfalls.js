@@ -3,37 +3,37 @@
 var locations = [
   {
     title: 'Cathedral Lakes Waterfall',
-    location: {lat: 37.84585, lng: -119.43203},
+    location: {lat: 37.8436488, lng: -119.4231419},
     region: 'American Southwest'
   },
   {
     title: 'Navajo Falls',
-    location: {lat: 36.247042, lng: -112.70256},
+    location: {lat: 36.2494882, lng: -112.7057119},
     region: 'American Southwest'
   },
   {
-    title: 'Crystal Falls',
-    location: {lat: 44.7177136, lng: -110.5012769},
+    title: 'Bridal Veil Falls',
+    location: {lat: 44.6400976, lng: -123.7007423},
     region: 'Pacific Northwest'
   },
   {
-    title: 'Double Falls',
-    location: {lat: 44.891968000000006, lng: -122.644629},
+    title: 'Majestic Falls',
+    location: {lat: 44.6400976, lng: -123.7007423},
     region: 'Pacific Northwest'
   },
   {
     title: 'Cane Creek Cascade',
-    location: {lat: 35.662317, lng: -85.35112},
+    location: {lat: 85.3592789, lng: -94.3153677},
     region: 'Eastern US'
   },
   {
-    title: 'Dry Falls',
-    location: {lat: 35.068818, lng: -83.2408038},
+    title: 'Tinker Creek Falls',
+    location: {lat: 37.42567, lng: -85.5984801},
     region: 'Eastern US'
   },
   {
     title: 'Niagara Falls',
-    location: {lat: 43.077916, lng: -79.1379568},
+    location: {lat: 43.0995002, lng: -79.0437609},
     region: 'Eastern US'
   }
 ];

@@ -113,6 +113,26 @@ function initMap() {
             '<div>No Street View Found</div>');
         }
       }
+
+      var searchWiki = function(search) {
+        $.ajax({
+                url: "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=wikiCallback&limit=10&search=" + search,
+                dataType: "jsonp",
+            })
+            .done(function(response) {
+              if (response[0] !== 'undefined') {
+                wikiTitle = response[1][0];
+                wikiLink = response[3][0];
+                popUp();
+              }
+            })
+            .fail(function(response) {
+                wikiTitle = "Failed to load Wikipedia API";
+                popUp();
+            });
+      };
+      searchWiki(search);
+
       // Use streetview service to get the closest streetview image within
       // 50 meters of the markers position
       streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);

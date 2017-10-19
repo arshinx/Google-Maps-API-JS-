@@ -70,35 +70,3 @@ img {
   opacity: 0.5;
   margin-left: -104.5px; /*104.5px is half of the button's width*/
 }
-
-/* Nav */
-.nav {
-	padding-left: 28px;
-	text-align: center;
-	z-index: 1;
-	transition: all 0.5s ease;
-}
-
-.dropDown {
-  padding: 2.24em 0;
-}
-
-#stateList {
-	margin-top: 8px;
-}
-
-#schoolList {
-	padding: 0;
-	margin-top: 0;
-}
-
-#schoolList button {
-	padding: 20px 5px;
-	width: 100%;
-	font-size: 0.8em;
-	cursor: pointer;
-}
-
-#schoolList button:hover {
-	border-radius: 5px;
-}

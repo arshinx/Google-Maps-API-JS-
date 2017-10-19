@@ -3,12 +3,12 @@
 var locations = [
   {
     title: 'Cathedral Lakes Waterfall',
-    location: {lat: 37.8436488, lng: -119.4231419},
+    location: {lat: 37.843523, lng: -119.4209251},
     region: 'American Southwest'
   },
   {
     title: 'Navajo Falls',
-    location: {lat: 36.2494882, lng: -112.7057119},
+    location: {lat: 36.2500547, lng: -112.6967555},
     region: 'American Southwest'
   },
   {
@@ -28,7 +28,7 @@ var locations = [
   },
   {
     title: 'Tinker Creek Falls',
-    location: {lat: 37.42567, lng: -85.5984801},
+    location: {lat: 41.3834307, lng: -81.5326876},
     region: 'Eastern US'
   },
   {

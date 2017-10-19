@@ -15,19 +15,6 @@ function waterfallMapModel() {
     self.waterfallsList.push(locations[key]);
   });
 
-  // Highlight
-  // Highlights the button and the marker
-    self.highlight = function() {
-
-        self.selection(this.title);
-        locations.forEach(function(value, key) {
-            // markers[key].setIcon();
-            if (value.title === self.selection()) {
-                new google.maps.event.trigger(markers[key], 'click');
-            };
-        });
-    }; // Ends function
-
   // -- Filter List of Waterfalls -- //
   self.filter = function() {
 

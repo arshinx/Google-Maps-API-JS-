@@ -76,7 +76,7 @@ function initMap() {
       infowindow.marker = marker;
       // Wikipedia API
       var search = marker.title;
-      console.log(maker.title); // debugging
+      console.log(marker.title); // debugging
       var wikiTitle, wikiDesc, wikiLink; // Properties for Wiki Data
 
       // Search Wiki for location data

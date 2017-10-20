@@ -19,14 +19,16 @@ function waterfallMapModel() {
   // Select the button and the marker for pop-up
     self.select = function() {
 
-        self.selection(this.title);
+      // select
+      self.selection(this.title);
 
-        locations.forEach(function(value, key) {
-            // markers[key].setIcon();
-            if (value.title === self.selection()) {
-                new google.maps.event.trigger(markers[key], 'click');
-            };
-        });
+      // trigger info-window
+      locations.forEach(function(value, key) {
+          if (value.title === self.selection()) {
+            // trigger click-event
+              new google.maps.event.trigger(markers[key], 'click');
+          };
+      });
     }; // Ends function
 
   // -- Filter List of Waterfalls -- //

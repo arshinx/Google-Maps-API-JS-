@@ -1,6 +1,9 @@
 // *** Map ***
 var map;
 var isMenuHidden = false;
+var wikiTitle = ko.observable();
+var wikiDesc  = ko.observable();
+var wikiLink  = ko.observable(); // Properties for Wiki Data
 
 // Create a new blank array for all the listing markers.
 var markers = [];
@@ -76,8 +79,6 @@ function initMap() {
       infowindow.marker = marker;
       // Wikipedia API
       var search = marker.title;
-      console.log(marker.title); // debugging
-      var wikiTitle, wikiDesc, wikiLink; // Properties for Wiki Data
 
       // Search Wiki for location data
       var searchWiki = function(search) {
@@ -87,18 +88,19 @@ function initMap() {
             })
             .done(function(response) {
               if (response[0] !== 'undefined') {
-                wikiTitle = response[0];
-                wikiDesc  = response[2][0];
-                wikiLink  = response[3][0];
+                wikiTitle = ko.observable(response[0]);
+                wikiDesc  = ko.observable(response[2][0]);
+                wikiLink  = ko.observable(response[3][0]);
+                console.log(wikiDesc() + " " + wikiLink);
               }
             })
             .fail(function(response) {
-                wikiTitle = "Failed to load Wikipedia API";
+                wikiTitle = ko.observable("Failed to load Wikipedia API");
             });
       };
 
       // Store Wiki Properties for use
-      searchWiki(search);
+
 
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
@@ -118,17 +120,18 @@ function initMap() {
           var heading = google.maps.geometry.spherical.computeHeading(
             nearStreetViewLocation, marker.position);
             marker.setAnimation(google.maps.Animation.BOUNCE); // Bounce animation for markers
-            var wikiInfo = '<div><strong>' + search + '</strong><br><br><img src="img/' + search + '.jpg" alt="' + search + '" width="150px"><br><br>Learn more about:<br><a target="_blank" href="' + wikiLink + '">' + wikiTitle + '!</a></div>';
+            var wikiInfo = '<br>Learn more about:<br><a target="_blank" href="' + wikiLink() + '">' + wikiTitle() + '!</a></div>';
             infowindow.setContent(
               "<h2>" +
                 marker.title +
                 '</h2><div id="pano"></div>' +
                 '<div><br>Learn more about: <a target="_blank" href="' +
-                wikiLink +
+                wikiLink() +
                 '"><strong>' +
-                wikiTitle +
+                wikiTitle() +
                 "</strong></a></div>"
             );
+            console.log(marker.title + " " + wikiTitle() + " " + wikiDesc() + wikiLink()); // debugging
             var panoramaOptions = {
               position: nearStreetViewLocation,
               pov: {

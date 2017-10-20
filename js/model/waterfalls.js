@@ -22,8 +22,8 @@ var locations = [
     region: 'Pacific Northwest'
   },
   {
-    title: 'Great Falls',
-    location: {lat: 38.9912519, lng: -77.2773419},
+    title: 'Buttermilk Falls',
+    location: {lat: 43.4364603, lng: -72.7278752},
     region: 'Eastern US'
   },
   {

@@ -23,10 +23,10 @@
           <nav class="nav navbar navbar-light bg-light">
             <!-- Dropdown -->
             <div class="dropDown dropdown navbar-brand">Region:
-              <select id="stateList" data-bind="options: regions, value: state, event: {change: filter}"></select>
+              <select id="regionList" data-bind="options: regions, value: state, event: {change: filter}"></select>
             </div>
             <!-- Waterfall list -->
-            <ul id="schoolList" data-bind="foreach: waterfallsList">
+            <ul id="waterfallList" data-bind="foreach: waterfallsList">
               <button data-bind="click: $parent.select" class="btn btn-primary">
                 <span data-bind="text: title"></span>
               </button>

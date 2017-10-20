@@ -13,17 +13,17 @@ var locations = [
   },
   {
     title: 'Bridal Veil Falls',
-    location: {lat: 44.6400976, lng: -123.7007423},
+    location: {lat: 45.5548104, lng: -122.179885},
     region: 'Pacific Northwest'
   },
   {
     title: 'Majestic Falls',
-    location: {lat: 44.6400976, lng: -123.7007423},
+    location: {lat: 44.468169, lng: -122.6745195},
     region: 'Pacific Northwest'
   },
   {
-    title: 'Cane Creek Cascade',
-    location: {lat: 85.3592789, lng: -94.3153677},
+    title: 'Great Falls',
+    location: {lat: 38.9912519, lng: -77.2773419},
     region: 'Eastern US'
   },
   {

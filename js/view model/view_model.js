@@ -56,7 +56,7 @@ function waterfallMapModel() {
     });
   } // Ends Function
 
-  // Menu
+  // Menu (unused)
   var menu = function() {
 
   }; // Ends function

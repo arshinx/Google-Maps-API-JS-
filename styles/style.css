@@ -94,3 +94,10 @@ ul button {
   margin-left: -20px;
   margin-right: 20px;
 }
+
+/* Shift Down and Left on Mobile sizes */
+@media screen and (max-width: 768px) {
+  #map {
+    
+  }
+}

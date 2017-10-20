@@ -83,6 +83,7 @@ function initMap() {
 
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
+        infowindow.marker.setAnimation(null);
         infowindow.marker = null;
       });
 

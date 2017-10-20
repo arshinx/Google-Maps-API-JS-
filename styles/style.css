@@ -87,3 +87,9 @@ ul button {
   background-color:lavender;
   height: -webkit-fill-available;
 }
+
+/* Bootstrap */
+.btn-primary {
+  margin-left: -20px;
+  margin-right: 20px;
+}

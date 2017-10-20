@@ -79,7 +79,33 @@ function initMap() {
       infowindow.marker = marker;
       // Wikipedia API
       var search = marker.title;
-      var wikiTitle, wikiLink;
+      var wikiTitle, wikiDesc, wikiLink; // Properties for Wiki Data
+
+      // Search Wiki for location data
+      var searchWiki = function(search) {
+        $.ajax({
+                url: "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=wikiCallback&limit=10&search=" + search,
+                dataType: "jsonp",
+            })
+            .done(function(response) {
+              if (response[0] !== 'undefined') {
+                console.log("title: " + response[0]);
+                console.log("related: " + response[1]);
+                console.log("link: "  + response[3][0]);
+                console.log("links: "  + response[3]);
+                console.log("short desc: " + response[2][0]);
+                console.log(response);
+                wikiTitle = response[0];
+                wikiLink = response[3][0];
+                return response;
+                //popUp();
+              }
+            })
+            .fail(function(response) {
+                wikiTitle = "Failed to load Wikipedia API";
+                //popUp();
+            });
+      };
 
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
@@ -115,24 +141,6 @@ function initMap() {
             '<div>No Street View Found</div>');
         }
       }
-
-      var searchWiki = function(search) {
-        $.ajax({
-                url: "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=wikiCallback&limit=10&search=" + search,
-                dataType: "jsonp",
-            })
-            .done(function(response) {
-              if (response[0] !== 'undefined') {
-                wikiTitle = response[1][0];
-                wikiLink = response[3][0];
-                //popUp();
-              }
-            })
-            .fail(function(response) {
-                wikiTitle = "Failed to load Wikipedia API";
-                //popUp();
-            });
-      };
       searchWiki(search);
 
       // Use streetview service to get the closest streetview image within

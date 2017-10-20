@@ -65,3 +65,10 @@ function waterfallMapModel() {
 
 // Bind Model (KnockoutJS)
 ko.applyBindings(new waterfallMapModel());
+
+// Handle Google Maps API Load Failiure
+var mapLoadingFailed = function() {
+    alert("Error: Cannot load GoogleMaps API");
+    console.log("Error: Cannot load Google Maps API");
+    $('h1').append('<br>' + "Error: Cannot load GoogleMaps API");
+}

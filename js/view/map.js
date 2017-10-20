@@ -123,12 +123,12 @@ function initMap() {
               if (response[0] !== 'undefined') {
                 wikiTitle = response[1][0];
                 wikiLink = response[3][0];
-                popUp();
+                //popUp();
               }
             })
             .fail(function(response) {
                 wikiTitle = "Failed to load Wikipedia API";
-                popUp();
+                //popUp();
             });
       };
       searchWiki(search);

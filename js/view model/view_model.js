@@ -1,5 +1,5 @@
 // View Model using Knockout
-function waterfallMapModel() {
+function WaterfallMapModel() {
   var self = this;
 
   // Properties
@@ -64,7 +64,7 @@ function waterfallMapModel() {
 };
 
 // Bind Model (KnockoutJS)
-ko.applyBindings(new waterfallMapModel());
+ko.applyBindings(new WaterfallMapModel());
 
 // Handle Google Maps API Load Failiure
 var mapLoadingFailed = function() {

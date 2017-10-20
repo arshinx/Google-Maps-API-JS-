@@ -64,10 +64,3 @@ function waterfallMapModel() {
 };
 
 ko.applyBindings(new waterfallMapModel());
-
-// Google Error Handler
-var googleError = function() {
-    alert("Failed to load GoogleMaps API");
-    $('#map').append('<br>' + "Failed to load GoogleMaps API");
-    $('#map').css({'font-size': '3em', 'color': '#f21'})
-}

@@ -63,4 +63,5 @@ function waterfallMapModel() {
 
 };
 
+// Bind Model (KnockoutJS)
 ko.applyBindings(new waterfallMapModel());

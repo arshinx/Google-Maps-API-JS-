@@ -66,9 +66,6 @@ function initMap() {
   // *** Helpers *** //
   // *************** //
 
-  var infoContent = '<img src="https://www.city-journal.org/sites/cj/files/New-York.jpg" alt="' + marker.title + '"></img>' + '<div>' + marker.title + ' (' + marker.position.lat + ', ' + marker.position.lng + ')' + '</div>';
-
-
   // This function populates the infowindow when the marker is clicked. We'll only allow
   // one infowindow which will open at the marker that is clicked, and populate based
   // on that markers position.
@@ -79,6 +76,7 @@ function initMap() {
       infowindow.marker = marker;
       // Wikipedia API
       var search = marker.title;
+      console.log(maker.title); // debugging
       var wikiTitle, wikiDesc, wikiLink; // Properties for Wiki Data
 
       // Search Wiki for location data
@@ -89,23 +87,18 @@ function initMap() {
             })
             .done(function(response) {
               if (response[0] !== 'undefined') {
-                console.log("title: " + response[0]);
-                console.log("related: " + response[1]);
-                console.log("link: "  + response[3][0]);
-                console.log("links: "  + response[3]);
-                console.log("short desc: " + response[2][0]);
-                console.log(response);
                 wikiTitle = response[0];
-                wikiLink = response[3][0];
-                return response;
-                //popUp();
+                wikiDesc  = response[2][0];
+                wikiLink  = response[3][0];
               }
             })
             .fail(function(response) {
                 wikiTitle = "Failed to load Wikipedia API";
-                //popUp();
             });
       };
+
+      // Store Wiki Properties for use
+      searchWiki(search);
 
       // Make sure the marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
@@ -141,7 +134,6 @@ function initMap() {
             '<div>No Street View Found</div>');
         }
       }
-      searchWiki(search);
 
       // Use streetview service to get the closest streetview image within
       // 50 meters of the markers position

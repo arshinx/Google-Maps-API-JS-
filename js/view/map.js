@@ -56,8 +56,8 @@ function initMap() {
       this.setIcon(defaultIcon);
     });
 
-    document.getElementById('show-listings').addEventListener('click', showListings);
-    document.getElementById('hide-listings').addEventListener('click', hideListings);
+    // document.getElementById('show-listings').addEventListener('click', showListings);
+    // document.getElementById('hide-listings').addEventListener('click', hideListings);
     // *** Menu Button ***
     // document.getElementById('menu').addEventListener('click', hideMenu);
   }

@@ -119,7 +119,16 @@ function initMap() {
             nearStreetViewLocation, marker.position);
             marker.setAnimation(google.maps.Animation.BOUNCE); // Bounce animation for markers
             var wikiInfo = '<div><strong>' + search + '</strong><br><br><img src="img/' + search + '.jpg" alt="' + search + '" width="150px"><br><br>Learn more about:<br><a target="_blank" href="' + wikiLink + '">' + wikiTitle + '!</a></div>';
-            infowindow.setContent('<div><strong>' + marker.title + '</strong></div><div id="pano"></div>' + '');
+            infowindow.setContent(
+              "<h2>" +
+                marker.title +
+                '</h2><div id="pano"></div>' +
+                '<div><br>Learn more about: <a target="_blank" href="' +
+                wikiLink +
+                '"><strong>' +
+                wikiTitle +
+                "</strong></a></div>"
+            );
             var panoramaOptions = {
               position: nearStreetViewLocation,
               pov: {

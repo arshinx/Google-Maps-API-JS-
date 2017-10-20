@@ -27,7 +27,7 @@
             </div>
             <!-- Waterfall list -->
             <ul id="schoolList" data-bind="foreach: waterfallsList">
-              <button class="btn btn-primary">
+              <button data-bind="click: $parent.select" class="btn btn-primary">
                 <span data-bind="text: title"></span>
               </button>
             </ul>

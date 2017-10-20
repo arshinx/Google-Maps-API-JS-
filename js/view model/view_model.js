@@ -10,10 +10,24 @@ function waterfallMapModel() {
   // Functions
 
   // -- Waterfalls list -- //
-  locations.forEach(function(value, key) {
+  locations.forEach(function(value, key){
     // Populate list
     self.waterfallsList.push(locations[key]);
   });
+
+  // Select
+  // Select the button and the marker for pop-up
+    self.select = function() {
+
+        self.selection(this.title);
+
+        locations.forEach(function(value, key) {
+            // markers[key].setIcon();
+            if (value.title === self.selection()) {
+                new google.maps.event.trigger(markers[key], 'click');
+            };
+        });
+    }; // Ends function
 
   // -- Filter List of Waterfalls -- //
   self.filter = function() {
@@ -25,8 +39,7 @@ function waterfallMapModel() {
       self.waterfallsList.push(locations[key]);
       markers[key].setVisible(true);
     });
-
-    var a; // Debugging purposes
+    var a;
 
     // Filter listings/markers — hide
     locations.forEach(function(value, key){
@@ -49,3 +62,10 @@ function waterfallMapModel() {
 };
 
 ko.applyBindings(new waterfallMapModel());
+
+// Google Error Handler
+var googleError = function() {
+    alert("Failed to load GoogleMaps API");
+    $('#map').append('<br>' + "Failed to load GoogleMaps API");
+    $('#map').css({'font-size': '3em', 'color': '#f21'})
+}

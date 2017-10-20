@@ -10,7 +10,7 @@ function waterfallMapModel() {
   // Functions
 
   // -- Waterfalls list -- //
-  locations.forEach(function(value, key){
+  locations.forEach(function(value, key) {
     // Populate list
     self.waterfallsList.push(locations[key]);
   });
@@ -25,7 +25,8 @@ function waterfallMapModel() {
       self.waterfallsList.push(locations[key]);
       markers[key].setVisible(true);
     });
-    var a;
+
+    var a; // Debugging purposes
 
     // Filter listings/markers — hide
     locations.forEach(function(value, key){

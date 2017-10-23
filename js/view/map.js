@@ -121,6 +121,7 @@ function initMap() {
               }
             };
             searchWiki(search);
+            console.log(document.getElementById('pano'));
           var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), panoramaOptions);
         } else {
@@ -140,8 +141,12 @@ function initMap() {
                 wikiTitle = ko.observable(response[0]);
                 wikiDesc  = ko.observable(response[2][0]);
                 wikiLink  = ko.observable(response[3][0]);
-                console.log(wikiDesc() + " - Done ~~~~ - " + wikiLink);
 
+                if (wikiDesc() === "undefined") {
+                  wikiDesc = ko.observable("No description found.");
+                } else {
+                  wikiDesc = ko.observable(wikiDesc() + " — Source: wikipedia.org");
+                }
                 infowindow.setContent(
                   "<h2>" +
                     marker.title +

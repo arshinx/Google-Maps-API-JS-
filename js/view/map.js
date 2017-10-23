@@ -80,25 +80,6 @@ function initMap() {
       // Wikipedia API
       var search = marker.title;
 
-      // Search Wiki for location data
-      var searchWiki = function(search) {
-        $.ajax({
-                url: "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=wikiCallback&limit=10&search=" + search,
-                dataType: "jsonp",
-            })
-            .done(function(response) {
-              if (response[0] !== 'undefined') {
-                wikiTitle = ko.observable(response[0]);
-                wikiDesc  = ko.observable(response[2][0]);
-                wikiLink  = ko.observable(response[3][0]);
-                console.log(wikiDesc() + " " + wikiLink);
-              }
-            })
-            .fail(function(response) {
-                wikiTitle = ko.observable("Failed to load Wikipedia API");
-            });
-      };
-
       // Store Wiki Properties for use
 
 
@@ -131,7 +112,7 @@ function initMap() {
                 wikiTitle() +
                 "</strong></a></div>"
             );
-            console.log(marker.title + " " + wikiTitle() + " " + wikiDesc() + wikiLink()); // debugging
+            // console.log(marker.title + " " + wikiTitle() + " " + wikiDesc() + wikiLink()); // debugging
             var panoramaOptions = {
               position: nearStreetViewLocation,
               pov: {
@@ -139,6 +120,7 @@ function initMap() {
                 pitch: 30
               }
             };
+            searchWiki(search);
           var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), panoramaOptions);
         } else {
@@ -147,9 +129,51 @@ function initMap() {
         }
       }
 
+      // Search Wiki for location data
+      var searchWiki = function(search) {
+        $.ajax({
+                url: "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=wikiCallback&limit=10&search=" + search,
+                dataType: "jsonp",
+            })
+            .done(function(response) {
+              if (response[0] !== 'undefined') {
+                wikiTitle = ko.observable(response[0]);
+                wikiDesc  = ko.observable(response[2][0]);
+                wikiLink  = ko.observable(response[3][0]);
+                console.log(wikiDesc() + " - Done ~~~~ - " + wikiLink);
+
+                infowindow.setContent(
+                  "<h2>" +
+                    marker.title +
+                    '</h2><div id="pano"></div>' +
+                    '<div><br>Learn more about: <a target="_blank" href="' +
+                    wikiLink() +
+                    '"><strong>' +
+                    wikiTitle() +
+                    '</strong></a><br><br><a class="min-width">' + wikiDesc() + "</a></div>"
+                );
+              }
+            })
+            .fail(function(response) {
+                wikiTitle = ko.observable("Failed to load Wikipedia API");
+                infowindow.setContent(
+                  "<h2>" +
+                    marker.title +
+                    '</h2><div id="pano"></div>' +
+                    '<div><br>Learn more about: <a target="_blank" href="' +
+                    '"><strong>' +
+                    "</strong>(Error Loading)</a></div>"
+                );
+            });
+      };
+
+      console.log(wikiDesc());
+
       // Use streetview service to get the closest streetview image within
       // 50 meters of the markers position
       streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
+      console.log(marker.content);
+      //marker.setContent(marker.content);
       // Open the infowindow on the correct marker.
       infowindow.open(map, marker);
     }

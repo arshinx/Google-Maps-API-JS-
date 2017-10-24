@@ -120,7 +120,7 @@ function initMap() {
                 pitch: 30
               }
             };
-            searchWiki(search);
+
             console.log(document.getElementById('pano'));
           var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), panoramaOptions);
@@ -179,6 +179,7 @@ function initMap() {
       streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
       console.log(marker.content);
       //marker.setContent(marker.content);
+      searchWiki(search);
       // Open the infowindow on the correct marker.
       infowindow.open(map, marker);
     }

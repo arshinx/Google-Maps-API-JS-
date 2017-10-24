@@ -1,5 +1,5 @@
 // *** Map ***
-var map;
+var map, panorama;
 var isMenuHidden = false;
 var wikiTitle = ko.observable();
 var wikiDesc  = ko.observable();
@@ -122,7 +122,7 @@ function initMap() {
             };
 
             console.log(document.getElementById('pano'));
-          var panorama = new google.maps.StreetViewPanorama(
+          panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), panoramaOptions);
         } else {
           infowindow.setContent('<div>' + marker.title + '</div>' +

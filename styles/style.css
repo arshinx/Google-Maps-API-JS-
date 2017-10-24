@@ -89,6 +89,10 @@ ul button {
   height: -webkit-fill-available;
 }
 
+.pano {
+  visibility: hidden;
+}
+
 /* Bootstrap */
 .btn-primary {
   margin-left: -20px;

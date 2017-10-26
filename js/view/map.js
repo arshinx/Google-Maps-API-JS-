@@ -83,7 +83,7 @@ function initMap() {
       // Store Wiki Properties for use
 
 
-      // Make sure the marker property is cleared if the infowindow is closed.
+      // Ensure that marker property is cleared if the infowindow is closed.
       infowindow.addListener('closeclick', function() {
         infowindow.marker.setAnimation(null);
         infowindow.marker = null;

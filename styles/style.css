@@ -45,8 +45,8 @@ h1 {
 }
 
 #pano {
-  width: 200px;
-  height: 200px;
+  width: 20px;
+  height: 20px;
 }
 
 .text {
@@ -87,10 +87,6 @@ ul button {
 .info-column {
   background-color:lavender;
   height: -webkit-fill-available;
-}
-
-.pano {
-  visibility: hidden;
 }
 
 /* Bootstrap */

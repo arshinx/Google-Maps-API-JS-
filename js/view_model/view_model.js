@@ -27,7 +27,7 @@ function WaterfallMapModel() {
           if (value.title === self.selection()) {
             // trigger click-event
               google.maps.event.trigger(markers[key], 'click');
-          };
+          }
       });
     }; // Ends function
 
@@ -54,7 +54,7 @@ function WaterfallMapModel() {
         }
       }
     });
-  } // Ends Function
+  }; // Ends Function
 
   // Menu (unused)
   var menu = function() {

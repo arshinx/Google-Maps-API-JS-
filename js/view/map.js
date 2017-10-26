@@ -8,8 +8,6 @@ var wikiLink  = ko.observable(); // Properties for Wiki Data
 // Create a new blank array for all the listing markers.
 var markers = [];
 
-// Click-handler functions
-
 function initMap() {
 
   // Constructor creates a new map - only center and zoom are required.
@@ -28,6 +26,11 @@ function initMap() {
 
   // Highlighted Icon for hover
   var highlightedIcon = makeMarkerIcon('FFFF24');
+
+  // Click-handler functions (to be used in loop below)
+  var infowindowFunction = function(obj, infoWin) {
+    populateInfoWindow(obj, infoWin);
+  }
 
   // The following group uses the location array to create an array of markers on initialize.
   for (var i = 0; i < locations.length; i++) {
@@ -61,10 +64,6 @@ function initMap() {
       this.setIcon(defaultIcon);
     });
 
-    // document.getElementById('show-listings').addEventListener('click', showListings);
-    // document.getElementById('hide-listings').addEventListener('click', hideListings);
-    // *** Menu Button ***
-    // document.getElementById('menu').addEventListener('click', hideMenu);
   }
 
   // *************** //
@@ -145,7 +144,7 @@ function initMap() {
                 wikiDesc  = ko.observable(response[2][0]);
                 wikiLink  = ko.observable(response[3][0]);
 
-                if (wikiDesc() === "undefined") {
+                if (wikiDesc() === "undefined" || wikiDesc() === "null") {
                   wikiDesc = ko.observable("No description found.");
                 } else {
                   wikiDesc = ko.observable(wikiDesc() + " — Source: wikipedia.org");
@@ -168,8 +167,7 @@ function initMap() {
                   "<h2>" +
                     marker.title +
                     '</h2><div id="pano"></div>' +
-                    '<div><br>Learn more about: <a target="_blank" href="' +
-                    '"><strong>' +
+                    '<div><br>Learn more about: <a target="_blank"><strong>' +
                     "</strong>(Error Loading)</a></div>"
                 );
             });
@@ -202,8 +200,8 @@ function initMap() {
   // This function will loop through the listings and hide them all.
   function hideListings() {
     for (var i = 0; i < markers.length; i++) {
-      markers[i].setMap(null);
       markers[i].setAnimation(null);
+      markers[i].setMap(null);
     }
   } // Ends function
 

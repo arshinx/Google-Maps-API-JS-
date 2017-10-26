@@ -102,7 +102,7 @@ body {
 /* Shift Down and Left on Mobile sizes */
 @media screen and (max-width: 768px) {
   #map {
-    top: 350px;
+    top: 550px;
     left: 30px;
     right: 30px;
   }
@@ -110,7 +110,7 @@ body {
 
 @media screen and (max-width: 500px) {
   #map {
-    top: 450px;
+    top: 500px;
     left: 30px;
     right: 30px;
   }

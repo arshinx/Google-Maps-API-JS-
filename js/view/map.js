@@ -225,7 +225,7 @@ function initMap() {
     var options_box = $('.options-box');
     var container   = $('.container');
     var map_element = $('#map');
-    var menu        = $('#menu')
+    var menu        = $('#menu');
 
     if (container.css('left') < '0') {
       map_element.css('left', '+50%');
@@ -238,7 +238,7 @@ function initMap() {
       menu.css('left', '12%');
       map_element.css('width', '100%');
       //options_box.css('display', 'auto');
-    };
+    }
   } // Ends function
 
 }

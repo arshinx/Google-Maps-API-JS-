@@ -2,12 +2,12 @@
 // Normally we'd have these in a database instead.
 var locations = [
   {
-    title: 'Cathedral Lakes Waterfall',
+    title: 'Cathedral Lakes',
     location: {lat: 37.843523, lng: -119.4209251},
     region: 'American Southwest'
   },
   {
-    title: 'Navajo Falls',
+    title: 'Havasu Creek',
     location: {lat: 36.2500547, lng: -112.6967555},
     region: 'American Southwest'
   },

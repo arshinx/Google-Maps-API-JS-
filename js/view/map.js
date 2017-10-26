@@ -102,6 +102,9 @@ function initMap() {
           var heading = google.maps.geometry.spherical.computeHeading(
             nearStreetViewLocation, marker.position);
             marker.setAnimation(google.maps.Animation.BOUNCE); // Bounce animation for markers
+            setTimeout(function () {
+                marker.setAnimation(null);
+            }, 1500); // current maps duration of two bounces (v3.13)
             var wikiInfo = '<br>Learn more about:<br><a target="_blank" href="' + wikiLink() + '">' + wikiTitle() + '!</a></div>';
             infowindow.setContent(
               "<h2>" +

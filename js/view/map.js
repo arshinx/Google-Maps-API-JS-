@@ -1,9 +1,9 @@
 // *** Map ***
 var map, panorama, streetViewService, radius;
 var isMenuHidden = false;
-var wikiTitle = ko.observable();
-var wikiDesc  = ko.observable();
-var wikiLink  = ko.observable(); // Properties for Wiki Data
+var wikiTitle = ko.observable("Loading...");
+var wikiDesc  = ko.observable("Loading...");
+var wikiLink  = ko.observable("Loading..."); // Properties for Wiki Data
 
 // Create a new blank array for all the listing markers.
 var markers = [];

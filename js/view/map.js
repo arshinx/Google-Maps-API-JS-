@@ -1,5 +1,5 @@
 // *** Map ***
-var map, panorama;
+var map, panorama, streetViewService, radius;
 var isMenuHidden = false;
 var wikiTitle = ko.observable();
 var wikiDesc  = ko.observable();
@@ -90,8 +90,8 @@ function initMap() {
       });
 
       // *** Google Street View Service ***
-      var streetViewService = new google.maps.StreetViewService();
-      var radius = 50;
+      streetViewService = new google.maps.StreetViewService();
+      radius = 50;
       // In case the status is OK, which means the pano was found, compute the
       // position of the streetview image, then calculate the heading, then get a
       // panorama from that and set the options

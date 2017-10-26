@@ -17,7 +17,7 @@ var locations = [
     region: 'Pacific Northwest'
   },
   {
-    title: 'Majestic Falls',
+    title: 'Silver Falls State Park',
     location: {lat: 44.468169, lng: -122.6745195},
     region: 'Pacific Northwest'
   },
@@ -27,7 +27,7 @@ var locations = [
     region: 'Eastern US'
   },
   {
-    title: 'Tinker Creek Falls',
+    title: 'Tinkers Creek State Park',
     location: {lat: 41.3834307, lng: -81.5326876},
     region: 'Eastern US'
   },

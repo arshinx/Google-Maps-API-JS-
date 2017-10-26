@@ -8,6 +8,11 @@ var wikiLink  = ko.observable(); // Properties for Wiki Data
 // Create a new blank array for all the listing markers.
 var markers = [];
 
+// Click-handler functions
+function openInfoWindow(obj, infoWindow) {
+  populateInfoWindow(obj, infoWindow);
+}
+
 function initMap() {
 
   // Constructor creates a new map - only center and zoom are required.

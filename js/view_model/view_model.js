@@ -26,7 +26,7 @@ function WaterfallMapModel() {
       locations.forEach(function(value, key) {
           if (value.title === self.selection()) {
             // trigger click-event
-              new google.maps.event.trigger(markers[key], 'click');
+              google.maps.event.trigger(markers[key], 'click');
           };
       });
     }; // Ends function

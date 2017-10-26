@@ -61,7 +61,7 @@ function WaterfallMapModel() {
 
   }; // Ends function
 
-};
+}
 
 // Bind Model (KnockoutJS)
 ko.applyBindings(new WaterfallMapModel());
@@ -71,4 +71,4 @@ var mapLoadingFailed = function() {
     alert("Error: Cannot load GoogleMaps API");
     console.log("Error: Cannot load Google Maps API");
     $('h1').append('<br>' + "Error: Cannot load GoogleMaps API");
-}
+};

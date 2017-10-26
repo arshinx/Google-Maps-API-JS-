@@ -9,9 +9,6 @@ var wikiLink  = ko.observable(); // Properties for Wiki Data
 var markers = [];
 
 // Click-handler functions
-function openInfoWindow(obj, infoWindow) {
-  populateInfoWindow(obj, infoWindow);
-}
 
 function initMap() {
 

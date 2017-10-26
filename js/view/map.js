@@ -122,8 +122,9 @@ function initMap() {
             };
 
             console.log(document.getElementById('pano'));
-          panorama = new google.maps.StreetViewPanorama(
-            document.getElementById('pano'), panoramaOptions);
+            panorama = new google.maps.StreetViewPanorama(
+              document.getElementById('pano'), panoramaOptions
+            );
         } else {
           infowindow.setContent('<div>' + marker.title + '</div>' +
             '<div>No Street View Found</div>');
@@ -222,9 +223,9 @@ function initMap() {
   function hideMenu() {
 
     var options_box = $('.options-box');
-    var container = $('.container');
+    var container   = $('.container');
     var map_element = $('#map');
-    var menu = $('#menu')
+    var menu        = $('#menu')
 
     if (container.css('left') < '0') {
       map_element.css('left', '+50%');
